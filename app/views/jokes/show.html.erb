@@ -1,11 +1,10 @@
-<h1>SHOW</h1>
-
 <%=link_to "Jokes Home" :jokes_path%>
 <%=link_to "New Joke" :new_joke_path%>
 <%= link_to "Sign-In" :sessions_new_path %>
 <%= link_to "Sign-Up" :new_user_path %>
 
-<%= "#{joke.id}" %>
- <%="#{joke.title}"%>
- <%= "#{joke.updated_at}" %>
+<h1>Tell me more bout that funny</h1>
+<%="#{joke.id}" %>
+<%="#{joke.title}"%>
+<%="#{joke.updated_at}" %>
 

@@ -1,7 +1,6 @@
 class CommentsController < ActionController::Base
   def index
-    # @jokes = Jokes.all
-    @jokes = ["Hey, this is funny"]
+
   end
   def new
   end
