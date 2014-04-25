@@ -7,12 +7,15 @@
 <%="#{@joke.title}"%>
 <%="#{@joke.updated_at}" %>
 
-<%=form_for @vote, :url => votes_path(:id => @joke.id) do |f| %>
-    Vote Count - <%=@joke.votes.length%> -
-<%= f.submit %>
-<%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
 
+  <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => true) do |f| %>
+  <%= f.submit "Up" %>
+  <%end%>
+  <%= @joke.votes.length %>
+  <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => false) do |f| %>
+  <%= f.submit "Down" %>
 <%end%>
+<%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
 
 <!-- make below a partial -->
 <ul>

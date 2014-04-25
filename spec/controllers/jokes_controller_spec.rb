@@ -12,13 +12,10 @@ describe JokesController do
       expect(assigns(:jokes)).to eq Joke.all
     end
 
-
     it 'assigns a new vote' do
       get :index
-      expect(assigns(:vote)).to eq Vote.all
+      expect(assigns(:vote)).to be_a_new Vote
     end
-
-
   end
 
   context "#show" do

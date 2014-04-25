@@ -14,3 +14,4 @@ describe JokesController do
     end
   end
 end
+
