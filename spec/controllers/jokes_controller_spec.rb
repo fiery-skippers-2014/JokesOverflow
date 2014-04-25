@@ -11,6 +11,14 @@ describe JokesController do
       get :index
       expect(assigns(:jokes)).to eq Joke.all
     end
+
+
+    it 'assigns a new vote' do
+      get :index
+      expect(assigns(:vote)).to eq Vote.all
+    end
+
+
   end
 
   context "#show" do
@@ -34,6 +42,7 @@ describe JokesController do
       get :new
       expect(assigns(:joke)).to be_a_new Joke
     end
+
 
     context "create" do
       it "creates with valid attributes" do
