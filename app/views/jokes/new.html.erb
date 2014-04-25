@@ -1,8 +1,6 @@
 
 <%=link_to "Jokes Home", :jokes%>
 <%=link_to "New Joke", :new_joke %>
-<%=link_to "Sign-In", :new_session %>
-<%=link_to "Sign-Up", :new_user %>
 
 <h1>Create New Joke:</h1>
 <%=form_for @joke, :remote => true do |f| %>
