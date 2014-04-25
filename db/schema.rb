@@ -11,6 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 0) do
+=======
 ActiveRecord::Schema.define(:version => 20140425003319) do
 
   create_table "jokes", :force => true do |t|
@@ -25,5 +28,6 @@ ActiveRecord::Schema.define(:version => 20140425003319) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+>>>>>>> c71f8dab4c3e73dbf0a043265f8a056942e99a49
 
 end
