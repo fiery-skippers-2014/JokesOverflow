@@ -19,5 +19,21 @@ describe JokesController do
       get :show, :id => joke.id
       expect(response).to be_success
     end
+    it "assigns @joke to the joke found by id" do
+      get :show, :id => joke.id
+      expect(assigns(:joke)).to eq joke
+    end
   end
+
+  context "new" do
+    it "is successful" do
+      get :new
+      expect(response).to be_success
+    end
+  end
+
+
+
+
+
 end
