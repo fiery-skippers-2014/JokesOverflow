@@ -5,14 +5,25 @@ class VotesController < ActionController::Base
   end
 
   def create
-     p params
-    if params[:joke_id] != nil
-      @reply = Reply.find(params[:id])
-      @reply.votes << Vote.create
+    if params[:up] == "true"
+      if params[:joke_id] != nil
+        @reply = Reply.find(params[:id])
+        @reply.votes << Vote.create
+      else
+        @joke = Joke.find(params[:id])
+        @joke.votes << Vote.create
+      end
     else
-      @joke = Joke.find(params[:id])
-      @joke.votes << Vote.create
+      if params[:joke_id] != nil
+        @reply = Reply.find(params[:id])
+        @reply.votes.last.destroy
+      else
+        @joke = Joke.find(params[:id])
+        @joke.votes.last.destroy
+        p @joke.votes
+      end
     end
-   redirect_to jokes_path
+    redirect_to jokes_path
   end
+
 end

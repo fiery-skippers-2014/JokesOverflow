@@ -7,4 +7,8 @@ FactoryGirl.define do
     content { Faker::Lorem.sentence}
     joke
   end
+
+  factory :vote do
+  end
+
 end
