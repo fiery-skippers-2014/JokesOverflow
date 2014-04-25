@@ -1,4 +1,5 @@
 class Reply < ActiveRecord::Base
-  belongs_to :joke
   attr_accessible :content
+  belongs_to :joke
+  has_many :votes, :as => :votable
 end
