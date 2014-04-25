@@ -3,41 +3,32 @@ class JokesController < ActionController::Base
     @jokes = Joke.all
   end
 
-  def new
-    #
-    @joke = Joke.new
-  end
 
   def show
     @joke = Joke.find(params[:id])
   end
 
-  def create
-    @joke = Joke.new
-    respond_to do |format|
-      if valid
-        format.json { render :json => jokes_path }
-      else
-        format.json { render :json => @object.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+  # def new
+  #   @joke = Joke.new
+  # end
 
-  def edit
-     @joke = Joke.find(params[:id])
-  end
+  # def create
+  #   @joke = Joke.new params[:joke]
+  #   if @joke.save
+  #     redirect_to jokes_path
+  #   else
+  #     render new_joke_path
+  #   end
+  # end
 
-  def update
-    respond_to do |format|
-      if valid
-        format.json { render :json => jokes_path }
-      else
-        format.json { render :json => @object.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+  # def edit
+  #    @joke = Joke.find(params[:id])
+  # end
 
-  def destroy
-  end
+  # def update
+  # end
+
+  # def destroy
+  # end
 
 end
