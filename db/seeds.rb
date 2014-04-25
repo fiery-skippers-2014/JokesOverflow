@@ -11,6 +11,9 @@
 joke = Joke.create(title: "why did the chicken cross the road")
 reply = Reply.create(content: "to get to the other side")
 
+# Seeds the app with this:
+# http://api.icndb.com/jokes/random
+
 joke.replies << reply
 
 joke.replies.create(content: "hi")
