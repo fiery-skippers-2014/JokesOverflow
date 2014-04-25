@@ -1,11 +1,12 @@
 class JokesController < ActionController::Base
   def index
     @jokes = Joke.all
+    @vote = Vote.new
   end
-
 
   def show
     @joke = Joke.find(params[:id])
+    @vote = Vote.new
   end
 
   def new
@@ -18,7 +19,6 @@ class JokesController < ActionController::Base
     if @joke.save
       redirect_to jokes_path
     else
-      # need to not save invalid
       render new_joke_path
     end
   end

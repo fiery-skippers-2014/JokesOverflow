@@ -1,7 +1,7 @@
 class CreateJokes < ActiveRecord::Migration
   def change
     create_table :jokes do |t|
-      t.string :title
+      t.text :title
 
       t.timestamps
     end

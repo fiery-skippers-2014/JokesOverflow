@@ -7,3 +7,7 @@
 <%="#{@joke.title}"%>
 <%="#{@joke.updated_at}" %>
 
+  <%=form_for @vote, :url => votes_path(:id => @joke.id) do |f| %>
+      Vote Count - <%=@joke.votes.length%> -
+  <%= f.submit %>
+<%end%>

@@ -6,7 +6,13 @@
 
 <ol>
   <% @jokes.each do |joke| %>
-    <li><%= link_to joke.title, joke_path(joke) %></li>
+    <li><%= link_to joke.title, joke_path(joke) %>
+     <%=form_for @vote, :url => votes_path(:id => joke.id) do |f| %>
+      Vote Count - <%=joke.votes.length%> -
+  <%= f.submit %>
+<%end%>
+
+    </li>
   <%end%>
 </ol>
 
