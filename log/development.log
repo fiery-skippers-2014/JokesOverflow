@@ -1,4 +1,5 @@
 Connecting to database specified by database.yml
+<<<<<<< HEAD
   [1m[36m (18.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
   [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
@@ -6,6 +7,17 @@ Connecting to database specified by database.yml
 
 
 Started GET "/" for 127.0.0.1 at 2014-04-24 17:09:42 -0700
+=======
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-24 17:26:32 -0700
+>>>>>>> c71f8dab4c3e73dbf0a043265f8a056942e99a49
 
 ActionController::RoutingError (No route matches [GET] "/"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -25,6 +37,7 @@ ActionController::RoutingError (No route matches [GET] "/"):
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+<<<<<<< HEAD
   /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
   /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
   /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
@@ -34,6 +47,35 @@ ActionController::RoutingError (No route matches [GET] "/"):
 
 
 Started GET "/" for 127.0.0.1 at 2014-04-24 17:09:46 -0700
+=======
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (103.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (16.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateJokes (20140425002735)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140425002735')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReplies (20140425003319)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "replies" ("id" serial primary key, "jokes_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140425003319')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-24 17:49:04 -0700
+>>>>>>> c71f8dab4c3e73dbf0a043265f8a056942e99a49
 
 ActionController::RoutingError (No route matches [GET] "/"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -53,6 +95,7 @@ ActionController::RoutingError (No route matches [GET] "/"):
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+<<<<<<< HEAD
   /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
   /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
   /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
@@ -1467,3 +1510,195 @@ Started GET "/jokes" for 127.0.0.1 at 2014-04-24 18:39:54 -0700
 Processing by JokesController#index as HTML
   Rendered jokes/index.html.erb (0.8ms)
 Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+=======
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+DEPRECATION WARNING: You're trying to create an attribute `joke_id'. Writing arbitrary attributes on a model is deprecated. Please just use `attr_writer` etc. (called from irb_binding at (irb):11)
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+Connecting to database specified by database.yml
+  [1m[36m (5044.7ms)[0m  [1mDROP DATABASE IF EXISTS "jokes_overflow_dev"[0m
+PG::ObjectInUse: ERROR:  database "jokes_overflow_dev" is being accessed by other users
+DETAIL:  There are 3 other sessions using the database.
+: DROP DATABASE IF EXISTS "jokes_overflow_dev"
+  [1m[35m (156.8ms)[0m  DROP DATABASE IF EXISTS "jokes_overflow_test"
+  [1m[36m (376.4ms)[0m  [1mCREATE DATABASE "jokes_overflow_test" ENCODING = 'utf8'[0m
+  [1m[35m (36.7ms)[0m  DROP TABLE "jokes"
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "replies"
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "replies" ("id" serial primary key, "jokes_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.2ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:16:06 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:16:06 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:16:21 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:16:21 UTC +00:00]]
+  [1m[35m (1.8ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:16:40 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:16:40 UTC +00:00]]
+  [1m[35m (1.8ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (6.3ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:16:58 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:16:58 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (5045.0ms)[0m  [1mDROP DATABASE IF EXISTS "jokes_overflow_dev"[0m
+PG::ObjectInUse: ERROR:  database "jokes_overflow_dev" is being accessed by other users
+DETAIL:  There are 3 other sessions using the database.
+: DROP DATABASE IF EXISTS "jokes_overflow_dev"
+  [1m[35m (119.7ms)[0m  DROP DATABASE IF EXISTS "jokes_overflow_test"
+  [1m[36m (254.4ms)[0m  [1mCREATE DATABASE "jokes_overflow_test" ENCODING = 'utf8'[0m
+  [1m[35m (2.7ms)[0m  DROP TABLE "jokes"
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "replies"
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "replies" ("id" serial primary key, "jokes_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:17:35 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:17:35 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:18:07 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:18:07 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:18:24 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:18:24 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateJokes (20140425002735)
+Migrating to CreateReplies (20140425003319)
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (4.8ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:19:54 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:19:54 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+Connecting to database specified by database.yml
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+Connecting to database specified by database.yml
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+Connecting to database specified by database.yml
+  [1m[36m (3.2ms)[0m  [1mDROP TABLE "jokes"[0m
+  [1m[35m (9.6ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mDROP TABLE "replies"[0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "replies" ("id" serial primary key, "jokes_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 01:26:03 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:26:03 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (3.5ms)[0m  [1mDROP TABLE "jokes"[0m
+  [1m[35m (8.9ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "replies"[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "replies" ("id" serial primary key, "jokes_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 01:26:39 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:26:39 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "replies" ("content", "created_at", "jokes_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "to get to the other side"], ["created_at", Fri, 25 Apr 2014 01:26:39 UTC +00:00], ["jokes_id", nil], ["updated_at", Fri, 25 Apr 2014 01:26:39 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Connecting to database specified by database.yml
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+Connecting to database specified by database.yml
+PG::UndefinedColumn: ERROR:  column replies.joke_id does not exist
+LINE 1: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id"...
+                                                 ^
+: SELECT "replies".* FROM "replies"  WHERE "replies"."joke_id" = 1
+Connecting to database specified by database.yml
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateJokes (20140425002735)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140425002735')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReplies (20140425003319)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "replies" ("id" serial primary key, "joke_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140425003319')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 01:36:36 UTC +00:00], ["title", "why did the chicken cross the road"], ["updated_at", Fri, 25 Apr 2014 01:36:36 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "to get to the other side"], ["created_at", Fri, 25 Apr 2014 01:36:36 UTC +00:00], ["joke_id", nil], ["updated_at", Fri, 25 Apr 2014 01:36:36 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+>>>>>>> c71f8dab4c3e73dbf0a043265f8a056942e99a49
