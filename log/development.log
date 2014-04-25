@@ -6916,3 +6916,348 @@ Migrating to CreateReplies (20140425003319)
   [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140425003319')[0m
   [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140425002735')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (18.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateJokes (20140425002735)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (34.5ms)[0m  [1mCREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140425002735')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReplies (20140425003319)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "replies" ("id" serial primary key, "joke_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140425003319')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (151.7ms)[0m  DROP DATABASE IF EXISTS "jokes_overflow_test"
+  [1m[36m (296.7ms)[0m  [1mCREATE DATABASE "jokes_overflow_test" ENCODING = 'utf8'[0m
+  [1m[35m (9.5ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "replies" ("id" serial primary key, "joke_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140425003319')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140425002735')
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-25 10:49:01 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.8ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (2.8ms)
+Completed 200 OK in 52ms (Views: 12.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 10:49:24 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (6.6ms)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 10:54:49 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"voluptatem"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (1.3ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'voluptatem' LIMIT 1[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 17:54:49 UTC +00:00], ["title", "voluptatem"], ["updated_at", Fri, 25 Apr 2014 17:54:49 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 30ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 10:54:49 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 10:56:36 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (2.4ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 10:56:38 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>""}, "commit"=>"Create Joke"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = '' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered jokes/new.html.erb (2.0ms)
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 10:56:42 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"dfb"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'dfb' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 17:56:42 UTC +00:00], ["title", "dfb"], ["updated_at", Fri, 25 Apr 2014 17:56:42 UTC +00:00]]
+  [1m[36m (15.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 20ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 10:56:42 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jokes/2" for 127.0.0.1 at 2014-04-25 10:59:27 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered jokes/show.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 11:06:34 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (22.2ms)
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:07:02 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>""}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered jokes/new.html.erb (1.9ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:12:13 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"drgdryg"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'drgdryg' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 18:12:13 UTC +00:00], ["title", "drgdryg"], ["updated_at", Fri, 25 Apr 2014 18:12:13 UTC +00:00]]
+  [1m[35m (15.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 20ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:12:13 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (1.5ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:12:34 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>""}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered jokes/new.html.erb (1.4ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:13:11 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"r57"}, "commit"=>"Create Joke"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'r57' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 18:13:11 UTC +00:00], ["title", "r57"], ["updated_at", Fri, 25 Apr 2014 18:13:11 UTC +00:00]]
+  [1m[35m (16.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 20ms (ActiveRecord: 17.3ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:13:11 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:36:33 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (3.1ms)
+Completed 200 OK in 52ms (Views: 10.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-25 11:36:36 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-25 11:36:36 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 11:36:43 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (6.3ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:36:46 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"vv"}, "commit"=>"Create Joke"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'vv' LIMIT 1[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 18:36:47 UTC +00:00], ["title", "vv"], ["updated_at", Fri, 25 Apr 2014 18:36:47 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 23ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:36:47 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 11:38:33 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (2.8ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:38:37 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"biv"}, "commit"=>"Create Joke"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'biv' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 18:38:37 UTC +00:00], ["title", "biv"], ["updated_at", Fri, 25 Apr 2014 18:38:37 UTC +00:00]]
+  [1m[35m (16.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 20ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:38:37 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (1.4ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 11:40:34 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (1.5ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:40:45 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"TDD is a joke"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'TDD is a joke' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 18:40:45 UTC +00:00], ["title", "TDD is a joke"], ["updated_at", Fri, 25 Apr 2014 18:40:45 UTC +00:00]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 19ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:40:45 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (1.5ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes/7" for 127.0.0.1 at 2014-04-25 11:40:55 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mJoke Load (0.8ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  Rendered jokes/show.html.erb (1.1ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:40:57 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (1.0ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jokes/7" for 127.0.0.1 at 2014-04-25 11:41:03 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  Rendered jokes/show.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:42:26 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jokes/5" for 127.0.0.1 at 2014-04-25 11:46:32 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  Rendered jokes/show.html.erb (0.7ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jokes/3" for 127.0.0.1 at 2014-04-25 11:46:52 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered jokes/show.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (135.9ms)[0m  DROP DATABASE IF EXISTS "jokes_overflow_test"
+  [1m[36m (467.0ms)[0m  [1mCREATE DATABASE "jokes_overflow_test" ENCODING = 'utf8'[0m
+  [1m[35m (4.6ms)[0m  CREATE TABLE "jokes" ("id" serial primary key, "title" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "replies" ("id" serial primary key, "joke_id" integer, "content" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140425003319')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140425002735')
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 12:01:26 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (2.2ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 12:02:12 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rfsr7qbOcUqbKK68s/HbdKDyT0ccwVHu8DcbaCPyuwI=", "joke"=>{"title"=>"oihu"}, "commit"=>"Create Joke"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'oihu' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 19:02:12 UTC +00:00], ["title", "oihu"], ["updated_at", Fri, 25 Apr 2014 19:02:12 UTC +00:00]]
+  [1m[35m (15.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 20ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 12:02:12 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (1.6ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 12:03:43 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (1.9ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
