@@ -35,3 +35,5 @@ group :test do
   gem 'faker'
 end
 
+gem 'jquery-rails'
+
