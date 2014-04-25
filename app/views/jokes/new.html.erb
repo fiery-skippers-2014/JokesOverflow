@@ -3,7 +3,7 @@
 <%=link_to "New Joke", :new_joke %>
 
 <h1>Create New Joke:</h1>
-<%=form_for @joke, :remote => true do |f| %>
+<%=form_for @joke do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.submit %>
