@@ -30,6 +30,25 @@ describe JokesController do
       get :new
       expect(response).to be_success
     end
+    it "assigns @joke to a new joke" do
+      get :new
+      expect(assigns(:joke)).to be_a_new Joke
+    end
+
+    context "create" do
+      it "creates with valid attributes" do
+        expect {
+          post :create, :joke => FactoryGirl.attributes_for(:joke)
+        }.to change { Joke.count }.by(1)
+        expect(response).to be_redirect
+      end
+      it "doesnt create with invalid attr" do
+        expect {
+          post :create
+        }.not_to change { Joke.count }
+        expect(response).not_to be_redirect
+      end
+    end
   end
 
 
