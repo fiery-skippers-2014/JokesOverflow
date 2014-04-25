@@ -1,17 +1,19 @@
 class RepliesController < ActionController::Base
   def index
-    # @jokes = Jokes.all
+    @replies = Reply.all
   end
-  def new
-  end
+  # def new
+  #   @reply = Reply.new
+  # end
   def show
+    @reply = Reply.find(params[:id])
   end
-  def create
-  end
-  def edit
-  end
-  def update
-  end
-  def destroy
-  end
+  # def create
+  # end
+  # def edit
+  # end
+  # def update
+  # end
+  # def destroy
+  # end
 end
