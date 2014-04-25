@@ -6920,3 +6920,113 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/jokes/1" for 127.0.0.1 at 2014-04-25 11:15:27 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJoke Load (1.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 404 Not Found in 18ms
+
+ActiveRecord::RecordNotFound (Couldn't find Joke with id=1):
+  app/controllers/jokes_controller.rb:8:in `show'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-25 11:15:32 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:15:34 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.4ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 11:15:36 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (7.8ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:15:47 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZBio8ZhJxeGvLzx3NcmN1w4vxBAx+LcGEZaY8qETaoI=", "joke"=>{"title"=>"Why did the chicken cross the road?"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.4ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 25 Apr 2014 18:15:47 UTC +00:00], ["title", "Why did the chicken cross the road?"], ["updated_at", Fri, 25 Apr 2014 18:15:47 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 10ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:15:47 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jokes/1" for 127.0.0.1 at 2014-04-25 11:15:48 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered jokes/show.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-25 11:15:53 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (3.5ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jokes" for 127.0.0.1 at 2014-04-25 11:16:06 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZBio8ZhJxeGvLzx3NcmN1w4vxBAx+LcGEZaY8qETaoI=", "joke"=>{"title"=>"Why DIDN\"T the chicken cross the road?"}, "commit"=>"Create Joke"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 18:16:06 UTC +00:00], ["title", "Why DIDN\"T the chicken cross the road?"], ["updated_at", Fri, 25 Apr 2014 18:16:06 UTC +00:00]]
+  [1m[36m (15.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jokes
+Completed 302 Found in 19ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/jokes" for 127.0.0.1 at 2014-04-25 11:16:06 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/jokes/1/replies/new" for 127.0.0.1 at 2014-04-25 12:01:12 -0700
+Processing by RepliesController#new as HTML
+  Parameters: {"joke_id"=>"1"}
+  Rendered replies/new.html.erb (34.0ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (undefined method `replies_path' for #<#<Class:0x007fd594101ac8>:0x007fd594100e20>):
+    1: <%= form_for @reply do |f| %>
+    2:   <%= f.label :title %>
+    3:   <%= f.text_field :title %>
+    4:   <%= f.submit %>
+  app/views/replies/new.html.erb:1:in `_app_views_replies_new_html_erb___945328769375155200_70277644443180'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+Connecting to database specified by database.yml
