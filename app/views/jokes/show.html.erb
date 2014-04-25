@@ -7,7 +7,19 @@
 <%="#{@joke.title}"%>
 <%="#{@joke.updated_at}" %>
 
-  <%=form_for @vote, :url => votes_path(:id => @joke.id) do |f| %>
-      Vote Count - <%=@joke.votes.length%> -
-  <%= f.submit %>
+<%=form_for @vote, :url => votes_path(:id => @joke.id) do |f| %>
+    Vote Count - <%=@joke.votes.length%> -
+<%= f.submit %>
+<%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
+
 <%end%>
+
+<!-- make below a partial -->
+<ul>
+  <% @all_replies.each do |reply| %>
+    <li><%= reply.content  %></li>
+  <% end %>
+</ul>
+
+
+

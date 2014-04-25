@@ -9,10 +9,10 @@
     <li><%= link_to joke.title, joke_path(joke) %>
      <%=form_for @vote, :url => votes_path(:id => joke.id) do |f| %>
       Vote Count - <%=joke.votes.length%> -
-  <%= f.submit %>
+  <%= f.submit %> </li>
 <%end%>
 
-    </li>
+
   <%end%>
 </ol>
 

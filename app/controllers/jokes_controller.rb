@@ -6,6 +6,7 @@ class JokesController < ActionController::Base
 
   def show
     @joke = Joke.find(params[:id])
+    @all_replies = @joke.replies.all.reverse
     @vote = Vote.new
   end
 

@@ -17,7 +17,7 @@ class RepliesController < ActionController::Base
     joke = Joke.find params[:joke_id]
     @reply = joke.replies.build params[:reply]
     if @reply.save
-      redirect_to joke_reply_path(joke, @reply)
+      redirect_to joke_path(joke)
     else
      render :new
     end
