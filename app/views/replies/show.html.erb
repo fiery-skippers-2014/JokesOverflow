@@ -1,0 +1,11 @@
+<%= link_to "Jokes Home", jokes_path %>
+<%= link_to "New Joke", new_joke_path %>
+<%= link_to "New Reply", new_joke_reply_path(@joke,@reply) %>
+
+<h1> <%= @joke.title %></h1>
+<ul>
+  <% @all_replies.each do |reply| %>
+    <li><%= reply.content  %></li>
+  <% end %>
+</ul>
+
