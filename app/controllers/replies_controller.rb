@@ -11,17 +11,12 @@ class RepliesController < ActionController::Base
 
   def create
     joke = Joke.find params[:joke_id]
-    p "% "*30
-    p joke
-    p params
     @reply = joke.replies.build params[:reply]
-    p @reply
-    if @reply.save!
-      p "SAVED"
-      p @reply
+    p @reply.valid?
+    if @reply.save
       redirect_to new_joke_reply_path(joke, @reply)
     else
-      p "DIDNT SAVE"
+     render :new
     end
   end
   # def edit

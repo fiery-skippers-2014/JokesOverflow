@@ -37,23 +37,41 @@ describe RepliesController do
     end
   end
 
-  context "#create" do
-    it "create a reply with valid attributes" do
+
+  context "create" do
+    let (:attributes) {FactoryGirl.attributes_for(:reply)}
+    it "creates with valid attributes" do
       expect {
-        post :create, :joke_id => joke.id, :reply => FactoryGirl.attributes_for(:reply)
-      }.to change { Joke.count }.by(1)
+        post :create, :joke_id => joke.id, :reply => attributes
+      }.to change { Reply.count }.by(1)
       expect(response).to be_redirect
+    end
+    it "doesnt create with invalid attr" do
+      expect {
+        post :create, :joke_id => joke.id, :reply => {}
+      }.not_to change { Reply.count }
+      expect(response).not_to be_redirect
     end
   end
 
+  # unsuccesful but useful stub attempts
+  # context "create" do
+  #   let (:attributes) {FactoryGirl.attributes_for(:reply)}
+  #   it "create a reply with valid attributes" do
+  #     Reply.any_instance.stub(:save) {true}
+  #     post :create, :joke_id => joke.id, :reply => attributes
+  #     # expect {
+  #     # }
+  #     expect(response).to be_redirect
+  #   end
+
+  #   it "doesn't create a reply with invalid attributes" do
+  #      Reply.any_instance.stub(:save) {false}
+  #      expect {
+  #       post :create, :joke_id => joke.id, :reply => attributes
+  #     }.not_to change { Reply.count }
+  #   end
+  # end
+
 end
 
-    # context "create" do
-    #   let (:attributes) {FactoryGirl.attributes_for(:reply)}
-    #   it "create a reply with valid attributes" do
-    #     Reply.any_instance.stub(:save) {true}
-    #     expect {
-    #       post :create, :joke_id => joke.id, :reply => attributes
-    #     }.to change { Reply.count }.by(1)
-    #   end
-    # end
