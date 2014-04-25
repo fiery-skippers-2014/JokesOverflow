@@ -4,7 +4,9 @@
 <%=link_to "Jokes Home", :jokes%>
 <%=link_to "New Joke", :new_joke %>
 
-<%# @jokes.each do |joke| %>
-  <%#= link_to "#{joke.title}", joke %>
-<%#end%>
+<ol>
+  <% @jokes.each do |joke| %>
+    <li><%= link_to joke.title, joke_path(joke) %></li>
+  <%end%>
+</ol>
 

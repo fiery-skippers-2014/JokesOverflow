@@ -13,9 +13,11 @@ describe JokesController do
     end
   end
 
-  # context "#show" do
-  #   let(:joke) { FactoryGirl.create :joke }
-  #   get :show, :id => joke.id
-  #   expect(assigns(:joke)).to eq joke
-  # end
+  context "#show" do
+    let(:joke) { FactoryGirl.create :joke }
+    it "is successful" do
+      get :show, :id => joke.id
+      expect(response).to be_success
+    end
+  end
 end

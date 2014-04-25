@@ -95,3 +95,109 @@ Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
   [1m[36m (4.1ms)[0m  [1mTRUNCATE TABLE "jokes", "replies" RESTART IDENTITY CASCADE;[0m
   [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 5.0ms | ActiveRecord: 6.9ms)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL
+  [1m[36m (1.5ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'jokes_overflow_test'[0m
+  [1m[35m (4.1ms)[0m  TRUNCATE TABLE "jokes", "replies" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL
+  [1m[36m (63.7ms)[0m  [1mTRUNCATE TABLE "jokes", "replies" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 5.0ms | ActiveRecord: 7.1ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "jokes" DISABLE TRIGGER ALL
+  [1m[36m (1.5ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'jokes_overflow_test'[0m
+  [1m[35m (4.1ms)[0m  TRUNCATE TABLE "replies", "jokes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "jokes" DISABLE TRIGGER ALL
+  [1m[36m (4.8ms)[0m  [1mTRUNCATE TABLE "replies", "jokes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Processing by JokesController#index as HTML
+PG::UndefinedTable: ERROR:  relation "jokes" does not exist
+LINE 5:              WHERE a.attrelid = '"jokes"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"jokes"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.1ms)[0m  [1m[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'jokes_overflow_test'
+  [1m[36m (0.2ms)[0m  [1m[0m
+Processing by JokesController#index as HTML
+PG::UndefinedTable: ERROR:  relation "jokes" does not exist
+LINE 5:              WHERE a.attrelid = '"jokes"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"jokes"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.1ms)[0m  
+  [1m[36m (0.2ms)[0m  [1m[0m
+PG::UndefinedTable: ERROR:  relation "jokes" does not exist
+LINE 5:              WHERE a.attrelid = '"jokes"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"jokes"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.1ms)[0m  
+  [1m[36m (0.1ms)[0m  [1m[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (20.4ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 25 Apr 2014 04:30:45 UTC +00:00], ["title", "rem"], ["updated_at", Fri, 25 Apr 2014 04:30:45 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.8ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered jokes/show.html.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'jokes_overflow_test'
+  [1m[36m (4.0ms)[0m  [1mTRUNCATE TABLE "jokes", "replies" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "jokes", "replies" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.9ms)[0m  TRUNCATE TABLE "jokes", "replies" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL[0m
