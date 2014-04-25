@@ -1,1 +1,9 @@
 
+<%= link_to "Jokes Home", root_path %>
+
+<h1>Create Reply:</h1>
+<%=form_for [@joke, @reply] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit %>
+<% end %>

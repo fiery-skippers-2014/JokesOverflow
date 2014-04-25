@@ -13,3 +13,4 @@ describe JokesController do
       expect(assigns(:jokes)).to eq Joke.all
     end
   end
+end
