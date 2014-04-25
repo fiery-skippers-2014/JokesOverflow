@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+
+joke = Joke.create(title: "why did the chicken cross the road")
+reply = Reply.create(content: "to get to the other side")
+
+joke.replies << reply
+
+joke.replies.create(content: "hi")
