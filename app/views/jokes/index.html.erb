@@ -1,0 +1,13 @@
+<h1>Jokes Overflow Homepage</h1>
+
+
+<%=link_to "Jokes Home", :jokes%>
+<%=link_to "New Joke", @joke, remote: true%>
+<%= link_to "Sign-In", :new_session %>
+<%= link_to "Sign-Up", :new_user %>
+
+
+<%# @jokes.each do |joke| %>
+  <%#= link_to "#{joke.title}", joke %>
+<%#end%>
+

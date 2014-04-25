@@ -1,0 +1,12 @@
+<h1>EDIT Joke</h1>
+
+<%=link_to "Jokes Home" :jokes_path%>
+<%=link_to "New Joke" :new_joke_path%>
+<%= link_to "Sign-In" :sessions_new_path %>
+<%= link_to "Sign-Up" :new_user_path %>
+
+<%= form_for @joke, :remote => true  do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<% end %>
