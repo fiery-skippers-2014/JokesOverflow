@@ -4,9 +4,9 @@ class JokesController < ActionController::Base
   end
 
 
-  # def show
-  #   @joke = Joke.find(params[:id])
-  # end
+  def show
+    @joke = Joke.find(params[:id])
+  end
 
   # def new
   #   @joke = Joke.new
