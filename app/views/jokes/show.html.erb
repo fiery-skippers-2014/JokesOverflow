@@ -2,27 +2,47 @@
 <%= link_to "New Joke", new_joke_path %>
 
 
-<h1>Tell me more bout that funny</h1>
-<%="#{@joke.id}" %>.
-<%="#{@joke.title}"%>
-<%="#{@joke.updated_at}" %>
+<h1>Make a better joke!</h1>
 
+<div class = "voting">
+   <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => true), :html=> {'data-id:' => @joke.id }, remote: true do |f| %>
+        <%= f.submit "Up" %>
+      <%end%>
+      <div class="votes">
+        <%=@joke.votes.length%>
+      </div>
+      <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => false), remote: true do |f| %>
+        <%= f.submit "Dn" %>
+      <%end%>
+    </div>
 
-  <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => true) do |f| %>
-  <%= f.submit "Up" %>
-  <%end%>
-  <%= @joke.votes.length %>
-  <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => false) do |f| %>
-  <%= f.submit "Down" %>
-<%end%>
+<div class ="text">
+  <%="#{@joke.title}"%>
+  <span class ="time">(<%=((Time.now-@joke.updated_at)/60).floor%>
+  minutes ago)</span>
+<div>
+
 <%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
 
-<!-- make below a partial -->
-<ul>
-  <% @all_replies.each do |reply| %>
-    <li><%= reply.content  %></li>
-  <% end %>
-</ul>
 
-
+<div class ="replies">
+  <ul>
+    <% @all_replies.each do |reply| %>
+    <div class = "voting">
+     <%=form_for @vote, :url => votes_path(:joke_id => @joke.id, :id => reply.id, :up => true), :html=> {'data-id:' => @joke.id }, remote: true do |f| %>
+          <%= f.submit "Up" %>
+        <%end%>
+        <div class="votes">
+          <%=reply.votes.length%>
+        </div>
+        <%=form_for @vote, :url => votes_path(:joke_id => @joke.id, :id => reply.id, :up => false), remote: true do |f| %>
+          <%= f.submit "Dn" %>
+        <%end%>
+      </div>
+      <li><%= reply.content  %></li>
+      <span class ="time">(<%=((Time.now-reply.updated_at)/60).floor%>
+      minutes ago)</span>
+    <% end %>
+  </ul>
+</div>
 

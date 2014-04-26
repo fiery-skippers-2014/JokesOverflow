@@ -1,10 +1,7 @@
-class VotesController < ApplicationController
-  def index
-    'hi'
-  end
+require 'debugger'
 
+class VotesController < ApplicationController
   def create
-    p params
     @votes = 0
     if params[:up] == "true"
       if params[:joke_id] != nil
@@ -25,8 +22,6 @@ class VotesController < ApplicationController
          @votes = @joke.votes.length
       end
     end
-    # p @votes
-    render :partial => "shared/votescount", local: {votes: @votes, id: params[:id]}
+    render :partial => "shared/votescount", local: {votes: @votes}
   end
-  'helo'
 end

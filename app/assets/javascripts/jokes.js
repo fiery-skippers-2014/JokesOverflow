@@ -6,14 +6,12 @@ var Votes = {
   },
 
   success: function(e, data) {
-    debugger
-    console.log(data)
+    this.parentElement.querySelector('.votes').innerHTML = data
   },
 
   showError: function(e, data) {
     console.log(data)
-
-    $('.new_vote').append("You already voted Sucka!");
+    this.parentElement.querySelector('.votes').innerHTML = "0 is as low as it goes :P"
   },
 }
 
