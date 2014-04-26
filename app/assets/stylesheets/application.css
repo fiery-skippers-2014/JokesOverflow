@@ -17,7 +17,7 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 14px
     color: #333333
-    background-color: #a4b4ca
+   background-color:#b0c4de
 }
 
 p {
@@ -90,3 +90,52 @@ a:active {
     color: rgb (255, 0,102);
     font-weight: bold;
 }
+
+.btnup {
+    background-image:url("../images/thumbs_down.png")
+}
+
+.btndown {
+    border-image:url("../images/thumbs_down.png")
+    background-image:url("../images/thumbs_down.png")
+}
+
+
+button {
+ background-image: url("../images/thumbs_up.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* put the height and width of your image here */
+  height: 50px;
+  width: 200px;
+  border: none;
+
+    }
+
+    button span {
+  display: none;
+}
+
+
+.voting {
+    float: left;
+}
+
+.text {
+    float: left;
+}
+
+.votes {
+    font-family: impact
+
+}
+
+.replies {
+    padding-top: 20px;
+    margin: 0px auto;
+}
+
+.time {
+    font-style: italic
+}
+

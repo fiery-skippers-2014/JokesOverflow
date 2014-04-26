@@ -1,10 +1,8 @@
-class VotesController < ActionController::Base
+require 'debugger'
 
-  def new
-    @vote = Vote.new
-  end
-
+class VotesController < ApplicationController
   def create
+    @votes = 0
     if params[:up] == "true"
       if params[:joke_id] != nil
         @reply = Reply.find(params[:id])
@@ -12,6 +10,7 @@ class VotesController < ActionController::Base
       else
         @joke = Joke.find(params[:id])
         @joke.votes << Vote.create
+        @votes = @joke.votes.length
       end
     else
       if params[:joke_id] != nil
@@ -20,10 +19,9 @@ class VotesController < ActionController::Base
       else
         @joke = Joke.find(params[:id])
         @joke.votes.last.destroy
-        p @joke.votes
+         @votes = @joke.votes.length
       end
     end
-    redirect_to jokes_path
+    render :partial => "shared/votescount", local: {votes: @votes}
   end
-
 end

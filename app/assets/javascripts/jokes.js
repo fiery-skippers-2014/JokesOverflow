@@ -1,13 +1,20 @@
-$(document).ready(function() {
-  console.log("hi")
-  $("a[data-remote]").on("ajax:success", this.appendJoke)
-  $("new_joke").on("ajax:success", this.appendJoke)
-  $("new_reply").on("ajax:success", this.appendReply)
-  $("new_comment").on("ajax:success", this.appendComment)
+var Votes = {
+  bindEvents: function() {
+    console.log('here')
+    $('.new_vote').on('ajax:success', this.success);
+    $('.new_vote').on('ajax:error', this.showError);
+  },
 
-  function appendJoke(data){
-    debugger
-    $('body').append(data)
-  }
+  success: function(e, data) {
+    this.parentElement.querySelector('.votes').innerHTML = data
+  },
 
+  showError: function(e, data) {
+    console.log(data)
+    this.parentElement.querySelector('.votes').innerHTML = "0 is as low as it goes :P"
+  },
+}
+
+$('document').ready(function() {
+  Votes.bindEvents();
 });
