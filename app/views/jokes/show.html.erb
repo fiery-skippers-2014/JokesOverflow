@@ -5,43 +5,53 @@
 <h1>Make a better joke!</h1>
 
 <div class = "voting">
-   <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => true), :html=> {'data-id:' => @joke.id }, remote: true do |f| %>
-        <%= f.submit "Up" %>
-      <%end%>
-      <div class="votes">
-        <%=@joke.votes.length%>
-      </div>
-      <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => false), remote: true do |f| %>
-        <%= f.submit "Dn" %>
-      <%end%>
+ <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => true), :html=> {'data-id:' => @joke.id }, remote: true do |f| %>
+      <%= f.submit "Up" %>
+    <%end%>
+    <div class="votes">
+      <%=@joke.votes.length%>
     </div>
+  <%=form_for @vote, :url => votes_path(:id => @joke.id, :up => false), remote: true do |f| %>
+    <%= f.submit "Dn" %>
+  <%end%>
+</div>
 
 <div class ="text">
   <%="#{@joke.title}"%>
-  <span class ="time">(<%=((Time.now-@joke.updated_at)/60).floor%>
-  minutes ago)</span>
+  <span class ="time">(<%=time_ago_in_words(@joke.updated_at)%>)</span>
+  <%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
 <div>
-
-<%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
 
 
 <div class ="replies">
   <ul>
+    <h6><li>
+    <%=link_to "Order by Votes", joke_path(@joke) %>
+    <%=link_to "Order by Most Recent", joke_path(
+    @joke, :sort_time => true) %>
+    </li></h6>
+
     <% @all_replies.each do |reply| %>
+
     <div class = "voting">
-     <%=form_for @vote, :url => votes_path(:joke_id => @joke.id, :id => reply.id, :up => true), :html=> {'data-id:' => @joke.id }, remote: true do |f| %>
-          <%= f.submit "Up" %>
-        <%end%>
-        <div class="votes">
-          <%=reply.votes.length%>
-        </div>
-        <%=form_for @vote, :url => votes_path(:joke_id => @joke.id, :id => reply.id, :up => false), remote: true do |f| %>
-          <%= f.submit "Dn" %>
-        <%end%>
+      <%=form_for @vote, :url => votes_path(:joke_id => @joke.id, :id => reply.id, :up => true), remote: true do |f| %>
+      <%= f.submit "Up" %>
+      <%end%>
+      <div class="votes">
+        <%= reply.votes.length %>
       </div>
+      <%=form_for @vote, :url => votes_path(:joke_id => @joke.id, :id => reply.id, :up => false), remote: true do |f| %>
+        <%= f.submit "Dn" %>
+      <%end%>
+    </div>
+
+    <div class ="text">
       <li><%= reply.content  %></li>
-      <span class ="time">(<%=((Time.now-reply.updated_at)/60).floor%>
-      minutes ago)</span>
+      <span class ="time">(<%=time_ago_in_words(reply.updated_at)%>)</span>
+      <br>
+    </div>
+
+
     <% end %>
   </ul>
 </div>

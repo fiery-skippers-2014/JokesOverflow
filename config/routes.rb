@@ -6,7 +6,7 @@ JokesOverflow::Application.routes.draw do
   # resources :users, only: [:new]
   # resources :sessions, only: [:new]
 
-  resources :votes, only: [:create, :index]
+  resources :votes, only: [:create]
 
 # match '/votes' => 'votes#new'
 

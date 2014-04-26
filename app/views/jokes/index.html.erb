@@ -3,11 +3,16 @@
 
 <%=link_to "Jokes Home", :jokes%>
 <%=link_to "New Joke", :new_joke %>
+<h6><li>
+<%=link_to "Order by Votes", :jokes %>
+<%=link_to "Order by Most Recent", jokes_path(:sort_time => true) %>
+</li></h6>
 
 <ol>
   <% @jokes.each do |joke| %>
     <li><%= link_to joke.title, joke_path(joke) %>
-      <%=form_for @vote, :url => votes_path(:id => joke.id, :up => true), :html=> {'data-id:' => joke.id }, remote: true do |f| %>
+      (<%=time_ago_in_words(joke.updated_at)%>)
+      <%=form_for @vote, :url => votes_path(:id => joke.id, :up => true), remote: true do |f| %>
         <%= f.submit "Up" %>
       <%end%>
       <div class="votes">
