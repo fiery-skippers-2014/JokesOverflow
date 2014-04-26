@@ -1,13 +1,22 @@
-$(document).ready(function() {
-  console.log("hi")
-  $("a[data-remote]").on("ajax:success", this.appendJoke)
-  $("new_joke").on("ajax:success", this.appendJoke)
-  $("new_reply").on("ajax:success", this.appendReply)
-  $("new_comment").on("ajax:success", this.appendComment)
+var Votes = {
+  bindEvents: function() {
+    console.log('here')
+    $('.new_vote').on('ajax:success', this.success);
+    $('.new_vote').on('ajax:error', this.showError);
+  },
 
-  function appendJoke(data){
+  success: function(e, data) {
     debugger
-    $('body').append(data)
-  }
+    console.log(data)
+  },
 
+  showError: function(e, data) {
+    console.log(data)
+
+    $('.new_vote').append("You already voted Sucka!");
+  },
+}
+
+$('document').ready(function() {
+  Votes.bindEvents();
 });

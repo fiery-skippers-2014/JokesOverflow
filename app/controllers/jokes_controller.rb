@@ -1,4 +1,4 @@
-class JokesController < ActionController::Base
+class JokesController < ApplicationController
   def index
     @jokes = Joke.all
     @vote = Vote.new
