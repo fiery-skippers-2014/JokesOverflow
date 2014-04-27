@@ -1,1 +1,4 @@
-<%= @votes.to_s %>
+<%= "#{@votes}  "  %>
+<% flash.each do |name, msg| -%>
+  <%= msg %>
+<% end %>

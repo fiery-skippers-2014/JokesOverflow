@@ -1,11 +1,9 @@
 var Votes = {
   bindEvents: function(){
-    console.log("in bindEvents")
     $(".new_vote").on('ajax:success', this.success);
     $(".new_vote").on('ajax:error', this.showError);
   },
   success: function(e, data){
-    console.log("success")
     this.parentElement.querySelector('.votes').innerHTML = data
   },
   showError: function(e, data) {
@@ -15,7 +13,6 @@ var Votes = {
 
 
 $('document').ready(function() {
-  console.log("doc is ready")
   Votes.bindEvents()
 });
 
