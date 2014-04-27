@@ -5,6 +5,7 @@ var Votes = {
     $(".new_vote").on('ajax:error', this.showError);
   },
   success: function(e, data){
+    console.log("success")
     this.parentElement.querySelector('.votes').innerHTML = data
   },
   showError: function(e, data) {
