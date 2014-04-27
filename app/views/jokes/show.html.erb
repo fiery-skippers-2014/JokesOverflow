@@ -22,12 +22,8 @@
 
 <%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
 
-<!-- make below a partial -->
-<ul>
-  <% @all_replies.each do |reply| %>
-    <li><%= reply.content  %></li>
-  <% end %>
-</ul>
+<%= render partial: 'partials/all_replies', locals: { all_replies: @all_replies} %>
+
 
 
 
