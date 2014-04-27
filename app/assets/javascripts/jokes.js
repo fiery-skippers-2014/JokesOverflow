@@ -1,7 +1,8 @@
 var submitReplyForm = {
   bindFormListener: function(){
-    $(".replyform").find(("input[type=submit]")).on('ajax:success', this.showSuccess)
-    $(".replyform").find(("input[type=submit]")).on('ajax:error', this.showError)
+    var $new_reply = $("#new_reply")
+    $new_reply.on('ajax:success', this.showSuccess)
+    $new_reply.on('ajax:error', this.showError)
   },
 
   showSuccess: function(e, data){
@@ -13,7 +14,7 @@ var submitReplyForm = {
     console.log(data)
     console.log("form Error :(")
   }
-  
+
 }
 
 var renderReplyForm = {
@@ -23,7 +24,9 @@ var renderReplyForm = {
   },
 
   success: function(e, data){
-    $('.replyform').append(data)
+    //awesome way to append ajax, .replyform should be hidden by default
+    $('.replyform').hide().append(data).slideDown()
+    // $('.replyform').append(data).slideDown()
     submitReplyForm.bindFormListener()
 
   },
@@ -37,7 +40,7 @@ var renderReplyForm = {
 var Votes = {
   bindEvents: function(){
     $(".new_vote").on('ajax:success', this.success);
-    $(".new_vote").on('ajax:error', this.showError); 
+    $(".new_vote").on('ajax:error', this.showError);
   },
   success: function(e, data){
     this.parentElement.querySelector('.votes').innerHTML = data
