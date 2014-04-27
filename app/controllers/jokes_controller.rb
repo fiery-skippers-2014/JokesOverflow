@@ -1,12 +1,26 @@
 class JokesController < ApplicationController
   def index
-    @jokes = Joke.all
+    if params[:sort_time]
+      @jokes = Joke.all.reverse
+    else
+      @jokes = Joke.all
+      @jokes.sort_by! do |joke|
+        joke.votes.length
+      end.reverse!
+    end
     @vote = Vote.new
   end
 
   def show
     @joke = Joke.find(params[:id])
-    @all_replies = @joke.replies.all.reverse
+    if params[:sort_time]
+      @all_replies = @joke.replies.all.reverse
+    else
+    @all_replies = @joke.replies.all
+      @all_replies.sort_by! do |reply|
+          reply.votes.length
+      end.reverse!
+    end
     @vote = Vote.new
   end
 
@@ -16,22 +30,10 @@ class JokesController < ApplicationController
 
   def create
     @joke = Joke.new params[:joke]
-
     if @joke.save
       redirect_to jokes_path
     else
       render new_joke_path
     end
   end
-
-  # def edit
-  #    @joke = Joke.find(params[:id])
-  # end
-
-  # def update
-  # end
-
-  # def destroy
-  # end
-
 end

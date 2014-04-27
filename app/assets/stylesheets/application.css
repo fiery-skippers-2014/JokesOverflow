@@ -12,7 +12,6 @@
  *= require_tree .
  */
 
-
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 14px
@@ -112,7 +111,7 @@ button {
 
     }
 
-    button span {
+button span {
   display: none;
 }
 
@@ -123,11 +122,13 @@ button {
 
 .text {
     float: left;
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .votes {
     font-family: impact
-
 }
 
 .replies {
