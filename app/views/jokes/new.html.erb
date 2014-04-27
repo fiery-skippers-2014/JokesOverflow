@@ -1,6 +1,7 @@
-<%=link_to "Jokes Home", :jokes%>
-<%=link_to "New Joke", :new_joke %>
-
+<header>
+  <%=link_to "Jokes Home", :jokes%>
+  <%=link_to "New Joke", :new_joke %>
+</header>
 <h1>Create New Joke:</h1>
 <%=form_for @joke do |f| %>
   <%= f.label :title %>

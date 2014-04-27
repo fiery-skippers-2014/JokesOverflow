@@ -1,16 +1,82 @@
 body {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 14px
-    color: #333333
-    background-color: #a4b4ca
+    font-family: 'Source Sans Pro', 'sans-serif';
+    color: #D52727;
+    background-color: #7CA4F8
 }
 
 .container {
-  width: 1000px;
+  width: 500px;
   margin: auto;
   text-align: center
 }
 
+ul{
+  list-style: none
+}
+
+li{
+  list-style: none
+}
+a {
+  color: #432470;
+  text-decoration: none
+}
+
+header a{
+  font-size: 1.75em
+}
+header a:hover{
+  font-weight: 600;
+}
+
+header a:first-of-type{
+  padding-right: 3%;
+}
+
+header a:last-of-type{
+  padding-left: 3%;
+}
+
+/*for list on homepage*/
+ol li{
+  margin-bottom: 7%;
+  /*background-color: #7CA4F8*/
+}
+
+ol li:hover{
+  background-color: #82A8FA
+}
+
+ol li a:hover{
+  font-weight: 600
+}
+
+ol li input {
+  background-color: #3F76BD;
+  width: 52px;
+  border-radius: 15px;
+  color: #9222A2;
+  border: 1px outset buttonface;
+}
+ol li input:hover {
+  background-color: #6C75DD;
+}
+/*end list on homepage*/
+
+/* for new page */
+form {
+  color: #432470;
+}
+
+/*very cool way to find an item*/
+form [type~=submit]{
+  background-color: #3F76BD;
+  width: 85px;
+  height: 25px;
+  border-radius: 15px;
+  color: #9222A2;
+  border: 1px outset buttonface;
+}
 
 
 
