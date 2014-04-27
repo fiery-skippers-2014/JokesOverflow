@@ -2,12 +2,10 @@ require 'debugger'
 
 class VotesController < ApplicationController
   def create
-    @votes = 0
     if session[:joke_array] == nil
       session[:reply_array] = []
       session[:joke_array] = []
     end
-
     # Move this to a model, checks for sessions, only one vote allowed
     if params[:joke_id]
       if session[:reply_array].include?(params[:id])
@@ -23,7 +21,7 @@ class VotesController < ApplicationController
       end
     end
 
-    #Creates a new vote
+    #Creates a new vote, needs to be refactored....
     if params[:up] == "true"
       if params[:joke_id] != nil
         @reply = Reply.find(params[:id])
@@ -42,7 +40,7 @@ class VotesController < ApplicationController
       else
         @joke = Joke.find(params[:id])
         @joke.votes.last.destroy
-         @votes = @joke.votes.length
+        @votes = @joke.votes.length
       end
     end
     render :partial => "shared/votescount", local: {votes: @votes}

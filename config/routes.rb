@@ -3,11 +3,5 @@ JokesOverflow::Application.routes.draw do
   resources :jokes do
     resources :replies
   end
-  # resources :users, only: [:new]
-  # resources :sessions, only: [:new]
-
   resources :votes, only: [:create]
-
-# match '/votes' => 'votes#new'
-
 end
