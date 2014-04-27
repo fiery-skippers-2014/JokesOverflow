@@ -1,13 +1,16 @@
 class RepliesController < ApplicationController
+  
   def index
     @replies = Reply.all
   end
+  
   def show
     # need test for @joke
     @joke = Joke.find(params[:joke_id])
     @reply = Reply.find(params[:id])
     @all_replies = @joke.replies.all.reverse
   end
+  
   def new
     @reply = Reply.new
     @joke = Joke.find(params[:joke_id])
@@ -22,10 +25,5 @@ class RepliesController < ApplicationController
      render :new
     end
   end
-  # def edit
-  # end
-  # def update
-  # end
-  # def destroy
-  # end
+
 end

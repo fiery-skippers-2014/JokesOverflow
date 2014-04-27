@@ -20,7 +20,8 @@
   <%= f.submit "Down" %>
 <%end%>
 
-<%= link_to "Reply", new_joke_reply_path(@joke), class: 'button' %>
+<%= link_to "Reply", new_joke_reply_path(@joke), class: 'button', :remote => true %>
+<div class= "replyform"></div>
 
 <%= render partial: 'partials/all_replies', locals: { all_replies: @all_replies} %>
 
