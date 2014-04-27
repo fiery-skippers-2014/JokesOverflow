@@ -20,10 +20,19 @@ class RepliesController < ApplicationController
     joke = Joke.find params[:joke_id]
     @reply = joke.replies.build params[:reply]
     if @reply.save
-      redirect_to joke_path(joke)
+      p "* " * 60
+      p @reply
+      p "* " * 60
+      render :partial => 'new_reply', :locals => {:reply => @reply}
+      # non ajax below
+      # redirect_to joke_path(joke)
     else
+     p "/ " * 60
+      p @reply
+      p "/ " * 60
      render :new
     end
+    # render :partial => 'new_reply', :locals => {:reply => @reply}
   end
 
 end

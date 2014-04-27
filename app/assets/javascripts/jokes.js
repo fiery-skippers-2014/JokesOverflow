@@ -1,13 +1,31 @@
-var Replies = {
+var submitReplyForm = {
+  bindFormListener: function(){
+    $(".replyform").find(("input[type=submit]")).on('ajax:success', this.showSuccess)
+    $(".replyform").find(("input[type=submit]")).on('ajax:error', this.showError)
+  },
+
+  showSuccess: function(e, data){
+    console.log(data)
+    console.log("formsuccess")
+  },
+
+  showError: function(e, data){
+    console.log(data)
+    console.log("form Error :(")
+  }
+  
+}
+
+var renderReplyForm = {
   bindEvents: function(){
     $(".button").on('ajax:success', this.success);
     $(".button").on('ajax:error', this.showError);
   },
 
   success: function(e, data){
-    console.log("success in Reply")
-    console.log(data)
     $('.replyform').append(data)
+    submitReplyForm.bindFormListener()
+
   },
 
   showError: function(e, data) {
@@ -32,12 +50,6 @@ var Votes = {
 
 $('document').ready(function() {
   Votes.bindEvents()
-  Replies.bindEvents()
+  renderReplyForm.bindEvents()
 });
 
-
-//   function appendJoke(data){
-//     $('body').append(data)
-//   }
-
-// });
