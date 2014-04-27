@@ -6,8 +6,7 @@ var submitReplyForm = {
   },
 
   showSuccess: function(e, data){
-    console.log(data)
-    console.log("formsuccess")
+    $('ul').prepend(data)
   },
 
   showError: function(e, data){
