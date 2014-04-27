@@ -1,0 +1,1401 @@
+Connecting to database specified by database.yml
+  [1m[36m (16.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.2ms)[0m  select table_name from information_schema.views where table_schema = 'jokes_overflow_test'
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (37.6ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.1ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (0.2ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (37.3ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (7.4ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "jokes" 
+Processing by JokesController#create as HTML
+  Parameters: {"joke"=>{"title"=>"molestiae"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'molestiae' LIMIT 1
+  [1m[36mSQL (71.6ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "molestiae"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[35m (15.6ms)[0m  COMMIT
+Redirected to http://test.host/jokes
+Completed 302 Found in 95ms (ActiveRecord: 88.2ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+Processing by JokesController#create as HTML
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.0ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'veritatis' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "veritatis"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJoke Load (0.9ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mReply Load (0.6ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1
+Completed 200 OK in 84ms (Views: 1.1ms | ActiveRecord: 3.0ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (22.4ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'dolor' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "dolor"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.4ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.2ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.6ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'eligendi' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "eligendi"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Processing by RepliesController#create as HTML
+  Parameters: {"reply"=>{"content"=>"Iure nam mollitia aliquid."}, "joke_id"=>"1"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Iure nam mollitia aliquid."], ["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://test.host/jokes/1
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "replies" [0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "replies" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'libero' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "libero"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#create as HTML
+  Parameters: {"reply"=>{}, "joke_id"=>"1"}
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "replies" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.6ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'autem' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "autem"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Processing by RepliesController#new as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.7ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'beatae' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "beatae"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Processing by RepliesController#new as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mJoke Load (0.9ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.4ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'velit' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00], ["title", "velit"], ["updated_at", Sat, 26 Apr 2014 22:43:21 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Processing by RepliesController#index as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mReply Load (0.6ms)[0m  [1mSELECT "replies".* FROM "replies" [0m
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.0ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.7ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'quam' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "quam"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Processing by RepliesController#index as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mReply Load (0.6ms)[0m  [1mSELECT "replies".* FROM "replies" [0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+  [1m[35mReply Load (0.5ms)[0m  SELECT "replies".* FROM "replies" 
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.6ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'iure' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "iure"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (16.4ms)[0m  [1mINSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Nihil ea blanditiis molestiae sunt maxime dicta."], ["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'quisquam' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "quisquam"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Processing by RepliesController#show as HTML
+  Parameters: {"id"=>"1", "joke_id"=>"2"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mReply Load (0.6ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 2[0m
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.1ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'accusamus' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "accusamus"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (1.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Blanditiis quibusdam consequatur eos quisquam exercitationem."], ["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'illo' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "illo"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#show as HTML
+  Parameters: {"id"=>"1", "joke_id"=>"2"}
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 2
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.5ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.8ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.8ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"Fake Joke"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'Fake Joke' LIMIT 1[0m
+  [1m[35mSQL (16.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "Fake Joke"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 21ms (ActiveRecord: 17.6ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.2ms)
+Started GET "/jokes/1" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1[0m
+  [1m[35mVote Load (0.7ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 1.5ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.9ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "jokes" 
+Started GET "/" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"ipsa"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'ipsa' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "ipsa"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "jokes" 
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.4ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"odio"}, "commit"=>"Create Joke"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'odio' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "odio"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.2ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"bob"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'bob' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "bob"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.9ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"bob"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'bob' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.2ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"ut"}, "commit"=>"Create Joke"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'ut' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "ut"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" 
+Started POST "/votes?id=1&up=true" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Up", "id"=>"1", "up"=>"true"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["votable_id", nil], ["votable_type", nil]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE "votes" SET "votable_id" = 1, "votable_type" = 'Joke', "updated_at" = '2014-04-26 22:43:22.558845' WHERE "votes"."id" = 1
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.9ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"ipsam"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'ipsam' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "ipsam"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.9ms)
+Started POST "/votes?id=1&up=true" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Up", "id"=>"1", "up"=>"true"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["votable_id", nil], ["votable_type", nil]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE "votes" SET "votable_id" = 1, "votable_type" = 'Joke', "updated_at" = '2014-04-26 22:43:22.612961' WHERE "votes"."id" = 1
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.4ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" 
+Started POST "/votes?id=1&up=false" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Down", "id"=>"1", "up"=>"false"}
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mVote Load (0.6ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke' ORDER BY "votes"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mVote Load (0.3ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 15:43:22 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.6ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (29.9ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00], ["title", "a"], ["updated_at", Sat, 26 Apr 2014 22:43:22 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mJoke Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'a' LIMIT 1[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'a' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35mJoke Exists (1.0ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.8ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.8ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#new as HTML
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (7.1ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.8ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.9ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 8.7ms | ActiveRecord: 13.4ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (1.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'jokes_overflow_test'[0m
+  [1m[35m (5.5ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.0ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#new as HTML
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.9ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.7ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+Processing by JokesController#create as HTML
+  Parameters: {"joke"=>{"title"=>"fuga"}}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'fuga' LIMIT 1[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:17 UTC +00:00], ["title", "fuga"], ["updated_at", Sat, 26 Apr 2014 23:01:17 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://test.host/jokes
+Completed 302 Found in 20ms (ActiveRecord: 8.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "jokes" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.6ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "jokes" 
+Processing by JokesController#create as HTML
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "jokes" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.4ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'molestiae' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:17 UTC +00:00], ["title", "molestiae"], ["updated_at", Sat, 26 Apr 2014 23:01:17 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.7ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1[0m
+Completed 200 OK in 53ms (Views: 1.1ms | ActiveRecord: 4.1ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.8ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'hic' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:17 UTC +00:00], ["title", "hic"], ["updated_at", Sat, 26 Apr 2014 23:01:17 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mReply Load (0.4ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.5ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.8ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.2ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.5ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#new as HTML
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.6ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.7ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.2ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'et' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "et"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#index as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[35mReply Load (0.6ms)[0m  SELECT "replies".* FROM "replies" 
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'distinctio' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "distinctio"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#index as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[35mReply Load (0.6ms)[0m  SELECT "replies".* FROM "replies" 
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" [0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.7ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'est' LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "est"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Processing by RepliesController#new as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mJoke Load (0.9ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.6ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'temporibus' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "temporibus"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Processing by RepliesController#new as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.6ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.6ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'ea' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "ea"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Quidem occaecati aut delectus dolore quasi voluptates."], ["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'animi' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "animi"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#show as HTML
+  Parameters: {"id"=>"1", "joke_id"=>"2"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mReply Load (0.5ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 2
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.3ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'ut' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "ut"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Ut eligendi assumenda occaecati nihil molestias similique dicta aut."], ["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'accusamus' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "accusamus"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Processing by RepliesController#show as HTML
+  Parameters: {"id"=>"1", "joke_id"=>"2"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mReply Load (0.7ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.6ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 2[0m
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.4ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "replies" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'voluptatum' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "voluptatum"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#create as HTML
+  Parameters: {"reply"=>{"content"=>"A eaque velit repellat et ipsa."}, "joke_id"=>"1"}
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "A eaque velit repellat et ipsa."], ["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://test.host/jokes/1
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'natus' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "natus"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Processing by RepliesController#create as HTML
+  Parameters: {"reply"=>{}, "joke_id"=>"1"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.6ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.6ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"in"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'in' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "in"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.9ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "jokes" 
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"omnis"}, "commit"=>"Create Joke"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'omnis' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "omnis"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "jokes" 
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.3ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"bob"}, "commit"=>"Create Joke"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'bob' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "bob"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.7ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.2ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"bob"}, "commit"=>"Create Joke"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'bob' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.2ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"Fake Joke"}, "commit"=>"Create Joke"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'Fake Joke' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "Fake Joke"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 1.0ms)
+Started GET "/jokes/1" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.5ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1[0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.0ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"magni"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'magni' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "magni"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" [0m
+Started POST "/votes?id=1&up=true" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Up", "id"=>"1", "up"=>"true"}
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["votable_id", nil], ["votable_type", nil]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE "votes" SET "votable_id" = 1, "votable_type" = 'Joke', "updated_at" = '2014-04-26 23:01:18.615906' WHERE "votes"."id" = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 10ms (ActiveRecord: 3.4ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.4ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"rerum"}, "commit"=>"Create Joke"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'rerum' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "rerum"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 5ms (ActiveRecord: 2.6ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 1.1ms)
+Started POST "/votes?id=1&up=true" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Up", "id"=>"1", "up"=>"true"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["votable_id", nil], ["votable_type", nil]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "votes" SET "votable_id" = 1, "votable_type" = 'Joke', "updated_at" = '2014-04-26 23:01:18.668441' WHERE "votes"."id" = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 7ms (ActiveRecord: 3.4ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" [0m
+Started POST "/votes?id=1&up=false" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Down", "id"=>"1", "up"=>"false"}
+  [1m[35mJoke Load (0.3ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke' ORDER BY "votes"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "votes" WHERE "votes"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mVote Load (0.3ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:18 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.4ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.8ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.6ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00], ["title", "a"], ["updated_at", Sat, 26 Apr 2014 23:01:18 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'a' LIMIT 1[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'a' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.0ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.8ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.8ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'jokes_overflow_test'
+  [1m[36m (6.3ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35mJoke Exists (1.0ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (7.0ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00], ["title", "a"], ["updated_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'a' LIMIT 1[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'a' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.6ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.8ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (3.3ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.8ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (2.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"bob"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'bob' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00], ["title", "bob"], ["updated_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (1.1ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+  Rendered jokes/index.html.erb (44.0ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 1.7ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (1.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"bob"}, "commit"=>"Create Joke"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'bob' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  Rendered jokes/new.html.erb (2.9ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.9ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (1.6ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"Fake Joke"}, "commit"=>"Create Joke"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'Fake Joke' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00], ["title", "Fake Joke"], ["updated_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 7ms (ActiveRecord: 2.7ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+  Rendered jokes/index.html.erb (3.6ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 1.1ms)
+Started GET "/jokes/1" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1[0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+  Rendered jokes/show.html.erb (5.1ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 1.6ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.2ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "jokes" 
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (2.9ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"fugiat"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'fugiat' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00], ["title", "fugiat"], ["updated_at", Sat, 26 Apr 2014 23:01:47 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+  Rendered jokes/index.html.erb (2.7ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "jokes" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.4ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:47 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (1.6ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"velit"}, "commit"=>"Create Joke"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'velit' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "velit"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+  Rendered jokes/index.html.erb (3.1ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.1ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (1.5ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"qui"}, "commit"=>"Create Joke"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.3ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'qui' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "qui"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+  Rendered jokes/index.html.erb (2.6ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.8ms)
+Started POST "/votes?id=1&up=true" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Up", "id"=>"1", "up"=>"true"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["votable_id", nil], ["votable_type", nil]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  UPDATE "votes" SET "votable_id" = 1, "votable_type" = 'Joke', "updated_at" = '2014-04-26 23:01:48.063934' WHERE "votes"."id" = 1
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 9ms (ActiveRecord: 3.4ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.4ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+  Rendered jokes/index.html.erb (3.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" 
+Started POST "/votes?id=1&up=false" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Down", "id"=>"1", "up"=>"false"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mVote Load (0.6ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke' ORDER BY "votes"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mVote Load (0.3ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 7ms (ActiveRecord: 2.8ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'
+  Rendered jokes/index.html.erb (2.4ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.7ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  Rendered jokes/index.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+Started GET "/jokes/new" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#new as HTML
+  Rendered jokes/new.html.erb (2.9ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started POST "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#create as HTML
+  Parameters: {"utf8"=>"✓", "joke"=>{"title"=>"necessitatibus"}, "commit"=>"Create Joke"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'necessitatibus' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "necessitatibus"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.6ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+  Rendered jokes/index.html.erb (4.5ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" 
+Started POST "/votes?id=1&up=true" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Up", "id"=>"1", "up"=>"true"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["votable_id", nil], ["votable_type", nil]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE "votes" SET "votable_id" = 1, "votable_type" = 'Joke', "updated_at" = '2014-04-26 23:01:48.156100' WHERE "votes"."id" = 1
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/jokes
+Completed 302 Found in 10ms (ActiveRecord: 4.1ms)
+Started GET "/jokes" for 127.0.0.1 at 2014-04-26 16:01:48 -0700
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  [1m[36mVote Load (0.4ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Joke'[0m
+  Rendered jokes/index.html.erb (3.5ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" 
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.8ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+  Rendered jokes/index.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36mJoke Load (0.3ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (4.7ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#new as HTML
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.4ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#index as HTML
+  [1m[35mJoke Load (0.6ms)[0m  SELECT "jokes".* FROM "jokes" 
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.3ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#index as HTML
+  [1m[36mJoke Load (0.7ms)[0m  [1mSELECT "jokes".* FROM "jokes" [0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'ab' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "ab"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mReply Load (0.5ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.6ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'odit' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "odit"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Processing by JokesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJoke Load (0.5ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 1[0m
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.0ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+Processing by JokesController#new as HTML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.0ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+Processing by JokesController#new as HTML
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.8ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+Processing by JokesController#create as HTML
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (7.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+Processing by JokesController#create as HTML
+  Parameters: {"joke"=>{"title"=>"sint"}}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'sint' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "sint"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://test.host/jokes
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "jokes" 
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.8ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'sed' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "sed"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Dolores ipsam delectus possimus vitae ut ut."], ["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.5ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'dolores' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "dolores"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Processing by RepliesController#show as HTML
+  Parameters: {"id"=>"1", "joke_id"=>"2"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mReply Load (0.8ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mReply Load (0.5ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 2[0m
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (6.2ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'suscipit' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "suscipit"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Et ratione nobis voluptas aut accusamus."], ["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'distinctio' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "distinctio"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#show as HTML
+  Parameters: {"id"=>"1", "joke_id"=>"2"}
+  [1m[35mJoke Load (0.4ms)[0m  SELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."joke_id" = 2
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.8ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'accusantium' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "accusantium"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Processing by RepliesController#create as HTML
+  Parameters: {"reply"=>{}, "joke_id"=>"1"}
+  [1m[36mJoke Load (0.7ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.5ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'possimus' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "possimus"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Processing by RepliesController#create as HTML
+  Parameters: {"reply"=>{"content"=>"Numquam qui consectetur aperiam explicabo alias laborum."}, "joke_id"=>"1"}
+  [1m[36mJoke Load (0.6ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "replies" ("content", "created_at", "joke_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Numquam qui consectetur aperiam explicabo alias laborum."], ["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["joke_id", 1], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Redirected to http://test.host/jokes/1
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "replies" [0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (7.3ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.6ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'dolorem' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "dolorem"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Processing by RepliesController#new as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mJoke Load (0.5ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.3ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.7ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'quas' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "quas"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Processing by RepliesController#new as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mJoke Load (0.4ms)[0m  [1mSELECT "jokes".* FROM "jokes" WHERE "jokes"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.4ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mJoke Exists (0.4ms)[0m  SELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'cumque' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "cumque"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Processing by RepliesController#index as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[36mReply Load (0.4ms)[0m  [1mSELECT "replies".* FROM "replies" [0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35mReply Load (0.4ms)[0m  SELECT "replies".* FROM "replies" 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.5ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" = 'expedita' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jokes" ("created_at", "title", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00], ["title", "expedita"], ["updated_at", Sat, 26 Apr 2014 23:01:48 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Processing by RepliesController#index as HTML
+  Parameters: {"joke_id"=>"1"}
+  [1m[35mReply Load (0.4ms)[0m  SELECT "replies".* FROM "replies" 
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.7ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.5ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mJoke Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "jokes" WHERE "jokes"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "jokes" [0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL
+  [1m[36m (5.3ms)[0m  [1mTRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "jokes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "replies" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.6ms)[0m  TRUNCATE TABLE "jokes", "replies", "votes" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "jokes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "replies" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL[0m

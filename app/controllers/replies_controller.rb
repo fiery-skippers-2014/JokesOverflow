@@ -1,4 +1,4 @@
-class RepliesController < ActionController::Base
+class RepliesController < ApplicationController
   def index
     @replies = Reply.all
   end
