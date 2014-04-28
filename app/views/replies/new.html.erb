@@ -2,5 +2,5 @@
 <%=form_for [@joke, @reply], :remote => true do |f| %>
   <%= f.label :content %>
   <%= f.text_field :content %>
-  <%= f.submit %>
+  <%= f.submit 'Submit', :class => 'submit_new_reply' %>
 <% end %>

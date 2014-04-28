@@ -1,16 +1,17 @@
 var submitReplyForm = {
   bindFormListener: function(){
+    console.log("in bindFormListener")
     var $new_reply = $("#new_reply")
-    $new_reply.on('ajax:success', this.showSuccess)
-    $new_reply.on('ajax:error', this.showError)
+    $new_reply.on('ajax:success', this.success)
+    $new_reply.on('ajax:error', this.error)
   },
 
-  showSuccess: function(e, data){
-    console.log("in show success")
+  success: function(e, data){
+    console.log("in  success")
     $('ul').prepend(data)
   },
 
-  showError: function(e, data){
+  error: function(e, data){
     console.log(data)
     console.log("form Error :(")
   }
@@ -23,9 +24,9 @@ var renderReplyForm = {
   },
 
   success: function(e, data){
-    $('a.create_reply').fadeOut("slow")
-    //awesome way to append ajax, .replyform should be hidden by default
-    $('.all_replies').hide().prepend(data).slideDown(1500)
+    console.log("in success")
+    $('a.create_reply').fadeOut()
+    $('.all_replies').hide().prepend(data).fadeIn()
     submitReplyForm.bindFormListener()
 
   },
@@ -54,4 +55,3 @@ $('document').ready(function() {
   Votes.bindEvents()
   renderReplyForm.bindEvents()
 });
-

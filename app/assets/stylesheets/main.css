@@ -83,6 +83,11 @@ form [type~=submit]{
   color: #9222A2;
   border: none;
 }
+form [type~=submit]:hover{
+ background: #5D8DCC;
+}
+
+
 
 li input {
   background-color: #3F76BD;
@@ -145,6 +150,12 @@ a.button:hover{
   margin-bottom: 5%;
   font-size: 1.24em;
 }
+.all_replies li:hover{
+  background-color: #82A8FA;
+  border-radius: 1%;
+}
+
+
 
 
 
