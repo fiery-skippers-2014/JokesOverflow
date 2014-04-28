@@ -74,12 +74,22 @@ ol li a:hover{
   font-weight: 600
 }
 
+form [type~=submit]{
+  background-color: #3F76BD;
+  width: 49px;
+  /* padding-right: 2px; */
+  height: 25px;
+  border-radius: 50%;
+  color: #9222A2;
+  border: none;
+}
+
 li input {
   background-color: #3F76BD;
   width: 52px;
   border-radius: 15px;
   color: #9222A2;
-  border: 1px outset buttonface;
+  border: 0;
 }
 li input:hover {
   background-color: #6C75DD;
@@ -98,13 +108,8 @@ form #joke_title{
   border: 2px inset #C9B3F1;
 }
 
-form [type~=submit]{
-  background-color: #3F76BD;
-  width: 85px;
-  height: 25px;
-  border-radius: 15px;
-  color: #9222A2;
-  border: 1px outset buttonface;
+.submit_new_joke:hover {
+  background-color: #4D7FBE
 }
 /*-----------------------------*/
 /*-------  Show Joke   --------*/

@@ -6,6 +6,6 @@
 <%=form_for @joke do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
-  <%= f.submit %>
+  <%= f.submit 'Submit', :class => 'submit_new_joke'%>
 <% end %>
 
