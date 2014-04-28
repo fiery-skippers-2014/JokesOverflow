@@ -13,7 +13,6 @@ var submitReplyForm = {
     console.log(data)
     console.log("form Error :(")
   }
-
 }
 
 var renderReplyForm = {
@@ -23,9 +22,9 @@ var renderReplyForm = {
   },
 
   success: function(e, data){
+    $('a.button').fadeOut("slow")
     //awesome way to append ajax, .replyform should be hidden by default
-    $('.replyform').hide().append(data).slideDown()
-    // $('.replyform').append(data).slideDown()
+    $('.all_replies').hide().prepend(data).slideDown(1500)
     submitReplyForm.bindFormListener()
 
   },

@@ -1,6 +1,6 @@
 class JokesController < ApplicationController
   def index
-    @jokes = Joke.all
+    @jokes = Joke.all.reverse
     @vote = Vote.new
   end
 

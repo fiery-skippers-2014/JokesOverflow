@@ -21,6 +21,9 @@ a {
   color: #432470;
   text-decoration: none
 }
+header {
+  padding-bottom: 5%
+}
 
 header a{
   font-size: 1.75em
@@ -37,38 +40,64 @@ header a:last-of-type{
   padding-left: 3%;
 }
 
-/*for list on homepage*/
+/*-----------------------------*/
+/*-------  Home Page    -------*/
+/*-----------------------------*/
+.voting_machine {
+  padding: 3%;
+  background: #4B8FB6;
+  border-radius: 50%;
+  float: left;
+}
 ol li{
-  margin-bottom: 7%;
   /*background-color: #7CA4F8*/
+  /*clear: both;*/
+  margin-bottom: 7%;
+  overflow: hidden;
 }
 
 ol li:hover{
-  background-color: #82A8FA
+  background-color: #82A8FA;
+  border-radius: 1%;
+}
+
+.joke_details {
+  width: 100%;
+  height: 15px;
+  margin-top: 8%;
+}
+.joke_details a{
+  font-size: 1.25em;
 }
 
 ol li a:hover{
   font-weight: 600
 }
 
-ol li input {
+li input {
   background-color: #3F76BD;
   width: 52px;
   border-radius: 15px;
   color: #9222A2;
   border: 1px outset buttonface;
 }
-ol li input:hover {
+li input:hover {
   background-color: #6C75DD;
 }
-/*end list on homepage*/
+/*-----------------------------*/
+/*-------  New Joke    --------*/
+/*-----------------------------*/
 
-/* for new page */
 form {
   color: #432470;
 }
 
 /*very cool way to find an item*/
+form #joke_title{
+  background: #CDCAEC;
+  border: 2px inset #C9B3F1;
+}
+
 form [type~=submit]{
   background-color: #3F76BD;
   width: 85px;
@@ -77,53 +106,33 @@ form [type~=submit]{
   color: #9222A2;
   border: 1px outset buttonface;
 }
+/*-----------------------------*/
+/*-------  Show Joke   --------*/
+/*-----------------------------*/
 
-
-
-/*
-
- a:link {
-    color: #00CC00;
-    text-decoration: underline;
-    font-weight: bold;
+.center_voting_machine {
+  width: 100%;
+  height: 104px;
+  margin: 0 auto;
 }
 
-li:link {
-    color: #00CC00;
-    text-decoration: none;
-    font-weight: bold;
+.center_voting_machine .voting_machine{
+  margin-left: 40%;
 }
 
-a:visited {
-    color: #00CC00;
-    text-0decoration: underline;
-    font-weight: bold;
+a.button{
+  font-size: 1.7em;
 }
 
-li a:visited {
-    color: #00CC00;
-    text-decoration: none;
-    font weight: bold;
+a.button:hover{
+  font-weight: 600
 }
 
-a:hover {
-    color: rgb(0, 96, 255);
-    padding-bottom: 5px;
-    font-weight: bold;
-    text-decoration: underline;
+.all_replies li{
+  color: #432470;
+  margin-bottom: 5%;
+  font-size: 1.24em;
 }
 
-li a:hover {
-    display: block;
-    color: rgb (0, 96, 255);
-    padding-bottom: 5px;
-    font-weight: bold;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #C6EC8C;
-}
 
-a:active {
-    color: rgb (255, 0,102);
-    font-weight: bold;
-}*/
+
