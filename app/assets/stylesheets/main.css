@@ -125,8 +125,15 @@ form #joke_title{
   margin-left: 40%;
 }
 
-a.button{
+.joke_title{
+  margin: 0;
+  padding: 0
+}
+
+a.create_reply{
   font-size: 1.7em;
+  display: block;
+  padding-top: 3%;
 }
 
 a.button:hover{

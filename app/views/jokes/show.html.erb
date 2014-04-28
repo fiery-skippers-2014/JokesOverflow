@@ -7,23 +7,13 @@
   <li><%= render partial: 'votes/voting_machine', locals: { vote: @vote, joke: @joke} %></li>
 </div>
 
-<h1><%="#{@joke.title}" %></h1>
-<%="#{@joke.updated_at}" %>
+<h1 class="joke_title"><%="#{@joke.title}" %></h1>
+<%="#{@joke.updated_at}"%>
 
-
-
-
-
-
-
-
-<%= link_to "Reply", new_joke_reply_path(@joke), class: 'button', :remote => true %>
+<%= link_to "Reply", new_joke_reply_path(@joke), class: 'create_reply', :remote => true %>
 
 <div class= "all_replies">
-
 <%= render partial: 'partials/all_replies', locals: { all_replies: @all_replies} %>
 </div>
-
-
 
 

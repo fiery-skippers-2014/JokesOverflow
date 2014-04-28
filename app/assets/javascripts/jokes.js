@@ -6,6 +6,7 @@ var submitReplyForm = {
   },
 
   showSuccess: function(e, data){
+    console.log("in show success")
     $('ul').prepend(data)
   },
 
@@ -17,12 +18,12 @@ var submitReplyForm = {
 
 var renderReplyForm = {
   bindEvents: function(){
-    $(".button").on('ajax:success', this.success);
-    $(".button").on('ajax:error', this.showError);
+    $(".create_reply").on('ajax:success', this.success);
+    $(".create_reply").on('ajax:error', this.showError);
   },
 
   success: function(e, data){
-    $('a.button').fadeOut("slow")
+    $('a.create_reply').fadeOut("slow")
     //awesome way to append ajax, .replyform should be hidden by default
     $('.all_replies').hide().prepend(data).slideDown(1500)
     submitReplyForm.bindFormListener()
