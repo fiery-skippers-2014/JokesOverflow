@@ -1,7 +1,8 @@
-
 class VotesController < ApplicationController
+  # this action needs refactoring
   def create
     flash.clear
+    # move line 6 into a helper method that explains what it does.
     cookies[params[:id]] ||= { value: false, expires: 5.seconds.from_now }
     unless cookies[params[:id]]
       up_vote = params[:up]
@@ -14,4 +15,3 @@ class VotesController < ApplicationController
     render :partial => "shared/votescount", local: { votes: @votes }
   end
 end
-

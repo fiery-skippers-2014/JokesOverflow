@@ -25,10 +25,10 @@ feature 'can create new joke'  do
 
     it 'change joke count by one' do
       expect {
-      visit root_path
-      click_on 'New Joke'
-      fill_in 'joke[title]', :with => joke[:title]
-      click_on 'Create Joke'
+        visit root_path
+        click_on 'New Joke'
+        fill_in 'joke[title]', :with => joke[:title]
+        click_on 'Create Joke'
        }.to change(Joke, :count).by(1)
     end
 
@@ -46,4 +46,3 @@ feature 'can create new joke'  do
 
 
 end
-

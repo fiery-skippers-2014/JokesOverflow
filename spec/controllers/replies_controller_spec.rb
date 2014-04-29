@@ -1,6 +1,4 @@
 require 'spec_helper'
-
-
 describe RepliesController do
   let(:joke) { FactoryGirl.create :joke }
   context "#index" do
@@ -74,4 +72,3 @@ describe RepliesController do
   # end
 
 end
-

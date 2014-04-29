@@ -1,4 +1,5 @@
 class JokesController < ApplicationController
+  # look into default sorting on a model instead of using .reverse
   def index
     @jokes = Joke.all.reverse
     @vote = Vote.new
@@ -23,6 +24,8 @@ class JokesController < ApplicationController
       render new_joke_path
     end
   end
+
+  # commented code is evil.
 
   # def edit
   #    @joke = Joke.find(params[:id])
